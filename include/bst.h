@@ -14,10 +14,11 @@ struct Node {
 };
 template <typename T>
 class BST {
-private:
-    Node<T>* root=nullptr;
+ private:
+    Node<T>* root = nullptr;
     int depthV = 0;
-public:
+
+ public:
     BST() {
         root = nullptr;
         depthV = 0;
@@ -54,8 +55,7 @@ public:
             cur->count +=1;
             root = cur;
             return;
-        }
-        else {
+        } else {
             Node<T>* past = nullptr;
             bool isleft = false;
             while (true) {
@@ -68,24 +68,20 @@ public:
                     if (past != nullptr) {
                         if (isleft == true) {
                             past->left = cur;
-                        }
-                        else {
+                        } else {
                             past->right = cur;
                         }
                         past = nullptr;
                     }
                     break;
-                }
-                else if (val == cur->value) {
+                } else if (val == cur->value) {
                     cur->count += 1;
                     break;
-                }
-                else if (val > cur->value) {
+                } else if (val > cur->value) {
                     isleft = false;
                     past = cur;
                     cur = cur->right;
-                }
-                else if (val < cur->value) {
+                } else if (val < cur->value) {
                     isleft = true;
                     past = cur;
                     cur = cur->left;
@@ -98,11 +94,9 @@ public:
         while (true) {
             if (cur->value == val) {
                 return cur->count;
-            }
-            else if (val > cur->value) {
+            } else if (val > cur->value) {
                 cur = cur->right;
-            }
-            else if (val < cur->value) {
+            } else if (val < cur->value) {
                 cur = cur->left;
             }
         }
