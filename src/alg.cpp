@@ -15,12 +15,11 @@ BST<std::string> makeTree(const char* name) {
     }
     std::string word = "";
     while (!file.eof()) {
-        int ch = int(file.get());
+        char IdontWantToDoIt = file.get();
+        int ch = int(IdontWantToDoIt);
         if ((ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122)) {
             word += tolower(ch);
-        }
-        else {
-            if (word != "") {
+        } else { if (word != "") {
                 tree.Add(word);
                 word = "";
             }
