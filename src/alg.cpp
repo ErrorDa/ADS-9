@@ -4,17 +4,16 @@
 #include  <locale>
 #include  <cstdlib>
 #include <string>
-using namespace std;
 #include  "bst.h"
 
-BST<string> makeTree(const char* name) {
-      BST<string> tree;
+BST<std::string> makeTree(const char* name) {
+      BST<std::string> tree;
     ifstream file(name);
     if (!file) {
         cout << "Something wrong" <<"\n";
-        throw string("Can not open file!");
+        throw std::string("Can not open file!");
     }
-    string word = "";
+    std::string word = "";
     while (!file.eof()) {
         int ch = int(file.get());
         if ((ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122)) {
