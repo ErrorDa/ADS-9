@@ -23,7 +23,7 @@ public:
         depthV = 0;
     }
     void printT(Node<T>* tree, int i) {
-        cout << i << "-----" << tree->value <<"\n";
+        std::cout << i << "-----" << tree->value <<"\n";
         ++i;
         if (tree->left != nullptr) {
             printTree(tree->left, i);
