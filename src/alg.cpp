@@ -30,4 +30,3 @@ BST<string> makeTree(const char* name) {
     file.close();
     return tree;
 }
-}
