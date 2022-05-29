@@ -4,7 +4,6 @@
 #include <iostream>
 #include <string>
 #include  <fstream>
-using namespace std;
 
 template <typename T>
 struct Node {
@@ -44,8 +43,6 @@ public:
         }
         if (i > depthV)
             depthV = i;
-        else
-           return depthV;
     }
     void Add(T val) {
         Node<T>* cur = root;
