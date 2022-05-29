@@ -8,9 +8,9 @@
 
 BST<std::string> makeTree(const char* name) {
       BST<std::string> tree;
-    ifstream file(name);
+    std::ifstream file(name);
     if (!file) {
-        cout << "Something wrong" <<"\n";
+        std::cout << "Something wrong" <<"\n";
         throw std::string("Can not open file!");
     }
     std::string word = "";
